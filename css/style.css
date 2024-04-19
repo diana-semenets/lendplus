@@ -1,14 +1,5 @@
 @charset "UTF-8";
-@font-face {
-    font-family: "ProximaNova";
-    src: url("../fonts/ProximaNova-Regular.woff") format("woff"); /* все современные браузеры, IE9+ */
-    font-weight: 400;
-  }
-@font-face {
-    font-family: "ProximaNova-Bold";
-    src: url("../fonts/ProximaNova-Bold.woff") format("woff"); /* все современные браузеры, IE9+ */
-    font-weight: 900;
-  }
+
   :root {
     --btn-color: #ffe400;
     --btn-hover-color: #ecdf66;
@@ -42,8 +33,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  font-family: "ProximaNova";
   color: #1e1e1e;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 input,
@@ -107,16 +98,12 @@ ul {
   list-style: none;
 }
 .btn {
-    border-radius: 10px;
-  background-color: var(--btn-color);
   font-size: 16px;
   font-weight: 600;
-  font-family: "ProximaNova";
+  font-family: Arial, Helvetica, sans-serif;
   transition: background-color ease-in-out 0.2s;
 }
-.btn:hover {
-    background-color: var(--btn-hover-color);
-}
+
 
 .wrapper {
   min-height: 100%;
@@ -138,7 +125,7 @@ ul {
   align-items: center;
   left: 0;
   position: fixed;
-  background-color: #fff;
+
   right: 0;
   top: 0;
   z-index: 5;
@@ -160,7 +147,14 @@ ul {
 }
 
 .header__logo {
-  max-width: 120px;
+  max-width: 130px;
+  padding: 5px;
+  border: 1px solid var(--main-color);
+}
+.footer__logo {
+    max-width: 130px;
+  padding: 5px;
+  border: 1px solid #fff;
 }
 .header__name, .footer__logo {
     font-size: 30px;
@@ -183,8 +177,8 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #333;
-  opacity: 0.9;
+  background-color: #bacec9;
+  opacity: 0.96;
 }
 
 .menu {
@@ -218,21 +212,24 @@ ul {
     text-align: end;  
 }
 .menu__days, .footer__time {
-    font-size: 12px;
-    color: #93A8C6;
+    font-size: 10px;
+  color: #595757;
     font-weight: 400;
 }
 .header__btn {
  max-width: 163px;
  width: 100%;
  height: 40px; 
+ background-color: #f5f5f5;
 }
 .main {
-    margin-top: 86px;
+
 }
 .bg__container {
+    padding-top: 86px;
     background-color: #f5f5f5;
-    background-image: url('../img/17564656.jpg');
+/*    background-image: url('../img/15704907.jpg'); */
+    background-image:  linear-gradient(333deg, rgba(9,43,15,1) 16%, rgba(12,90,59,1) 28%, rgba(237,239,245,0.5648460067620799) 80%, rgba(245,245,245,1) 92%);
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -240,12 +237,12 @@ ul {
 .bg__box {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 50px 0 0;
     display: flex;
     justify-content: space-between;
 }
 .bg__title, .bg__subtitle {
-    max-width: 360px;
+    max-width: 380px;
     font-size: 40px;
   line-height: 49px;
   font-weight: 600;
@@ -254,14 +251,9 @@ ul {
 .bg__img {
     max-width: 480px;
     width: 100%;
-    background-color: var(--btn-color);
-    border-radius: 50%;
-    overflow: hidden;
-    transition: all ease-in-out 0.2s;
+
 }
-.bg__img:hover {
-    background-color: var(--btn-hover-color);
-}
+
 .bg__img img {
     width: 100%;
 }
@@ -273,6 +265,7 @@ ul {
     width: 100%;
     height: 44px;
     margin-top: 50px;
+    background-color: #f5f5f5;
 }
 .advantages__container {
     padding: 80px 20px;
@@ -286,7 +279,7 @@ ul {
     line-height: 44px;
     color: var(--main-color);
   text-align: center;
-  font-family: "ProximaNova-Bold";
+  font-family: Arial, Helvetica, sans-serif;
 }
 .advantages__items {
     max-width: 1200px;
@@ -300,7 +293,6 @@ ul {
   background-color: #fff;
   padding: 25px;
   box-shadow: 0 2px 15px rgba(34, 90, 172, 0.25);
-  border-radius: 10px;
   flex: 1 0;
   transition: all ease-in-out 0.2s;
 }
@@ -365,7 +357,6 @@ ul {
 .borrow__item-number {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
     background-color: var(--main-color);
     display: flex;
     justify-content: center;
@@ -375,10 +366,10 @@ ul {
   line-height: 60px;
   font-weight: 700;
   flex-shrink: 0;
-  transition: background-color ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
 }
 .borrow__item-number:hover {
-    background-color: var(--btn-color);
+    transform: rotate(45deg);
 }
 .borrow__item-content h3 {
     margin-bottom: 10px;
@@ -394,6 +385,8 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--main-color);
+    color: #fff;
 }
 .reviews__container {
     padding: 80px 10px;
@@ -414,7 +407,6 @@ ul {
     min-height: 346px;
     padding: 30px;
   background: #f5f5f5;
-  border-radius: 10px;
   display: grid;
   grid-template-rows: 55px auto;
 }
@@ -433,7 +425,7 @@ ul {
   font-weight: 600;
   line-height: 18px;
   color: var(--main-color);
-  border-left: 2px solid var(--btn-color);
+/*  border-left: 2px solid var(--btn-color); */
   font-size: 15px;
 }
 .reviews__slide-date {
@@ -477,7 +469,6 @@ ul {
 .app__content h2 {
     font-size: 40px;
     color: #fff;
-    font-weight: 900;
 }
 .app__subtitle {
     margin-top: 30px;
@@ -496,6 +487,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
 }
 .app__img {
     align-self: end;
