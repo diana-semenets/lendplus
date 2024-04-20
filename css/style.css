@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
   :root {
-    --btn-color: #ffe400;
-    --btn-hover-color: #ecdf66;
     --main-color:#0c5a3b;
   }
   
@@ -159,7 +157,9 @@ ul {
 .header__name, .footer__logo {
     font-size: 30px;
 }
-
+.header__name {
+    max-height: 40px;
+}
 
 .header__contacts {
   display: flex;
@@ -180,7 +180,14 @@ ul {
   background-color: #bacec9;
   opacity: 0.96;
 }
-
+.header.sticky .header__btn {
+    background-color: var(--main-color);
+    color: #fff;
+}
+.header.sticky .header__btn:hover {
+    background-color: #fff;
+    color: var(--main-color);
+}
 .menu {
     max-width: 700px;
   height: inherit;
@@ -221,9 +228,11 @@ ul {
  width: 100%;
  height: 40px; 
  background-color: #f5f5f5;
+ transition: all ease-in-out 0.2s;
 }
-.main {
-
+.header__btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
 }
 .bg__container {
     padding-top: 86px;
@@ -250,7 +259,6 @@ ul {
 .bg__img {
     max-width: 480px;
     width: 100%;
-
 }
 
 .bg__img img {
@@ -265,6 +273,11 @@ ul {
     height: 44px;
     margin-top: 50px;
     background-color: #f5f5f5;
+    transition: all ease-in-out 0.2s;
+}
+.bg__btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
 }
 .advantages__container {
     padding: 80px 20px;
@@ -352,6 +365,7 @@ ul {
     max-width: 300px;
     display: flex;
     gap: 15px;
+    transition: all ease-in-out 0.2s;
 }
 .borrow__item-number {
     width: 60px;
@@ -367,7 +381,7 @@ ul {
   flex-shrink: 0;
   transition: all ease-in-out 0.2s;
 }
-.borrow__item-number:hover {
+.borrow__item:hover .borrow__item-number {
     transform: rotate(45deg);
 }
 .borrow__item-content h3 {
@@ -386,6 +400,11 @@ ul {
     align-items: center;
     background-color: var(--main-color);
     color: #fff;
+    transition: all ease-in-out 0.2s;
+}
+.borrow__btn:hover {
+    background-color: #fff;
+    color: var(--main-color);
 }
 .reviews__container {
     padding: 80px 10px;
@@ -654,13 +673,6 @@ ul {
 
 
 
-
-
-
-
-
-
-
 @media (max-width: 1300px) {
     .bg__box, .advantages__items, .app__container, .table__container, .privat__container{
         max-width: 1000px;
@@ -763,11 +775,11 @@ ul {
     .menu {
       position: fixed;
       padding-top: 20px;
-      top: 80px;
+      top: 85px;
       right: 0;
       width: 100%;
       height: 100%;
-      background: #fff;
+      background: #f5f5f5;
       line-height: 1.8;
       color: #1E1E1E;
       transform: translateX(100%);
@@ -775,8 +787,8 @@ ul {
       opacity: 1;
     }
     .menu.active {
-      width: 300px;
-      height: 450px;
+      width: 250px;
+      height: 400px;
       transform: translateX(0%);
       z-index: 5;
       opacity: 1;
