@@ -79,7 +79,15 @@ const swiper = new Swiper('.swiper', {
           document.body.style.overflow = "";
       }
   });
-
+  let contactLink = document.querySelector('.menu__list');
+    
+  contactLink.addEventListener("click", function () {
+      if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          menuBtn.classList.remove("active");
+          document.body.style.overflow = "";
+      }    
+      });
 
   window.onscroll = function () {
     myFunction();
